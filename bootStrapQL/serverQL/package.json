@@ -1,0 +1,24 @@
+{
+	"name": "upload.island",
+	"version": "1.0.0",
+	"description": "Let's talk about file upload",
+	"main": "server.js",
+	"author": "Ch0pper <ch0pper@kamécraft.com>",
+	"license": "MIT",
+	"scripts": {
+		"dev": "rm -rf ./node_modules/.cache/@babel &&  npx babel-node server.js"
+	},
+	"dependencies": {
+		"express": "^4.16.4",
+		"express-graphql": "^0.7.1",
+		"graphql": "^14.0.2",
+		"graphql-tag": "^2.10.0"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.1.2",
+		"@babel/core": "^7.1.2",
+		"@babel/node": "^7.0.0",
+		"@babel/preset-env": "^7.1.0",
+		"babel-plugin-import-graphql": "^2.6.2"
+	}
+}

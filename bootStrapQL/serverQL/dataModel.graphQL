@@ -1,0 +1,67 @@
+type Query {
+	hello: String!
+	getUsers: [Student]!
+}
+
+type Mutation {
+	addStudent(userInput: UserInput!, schoolInput: SchoolInput): Student
+}
+
+interface Character {
+	name: String!
+	age: Int!
+	address: [Address!]!
+	school: School!
+}
+
+type Student implements Character {
+	class: String!
+	name: String!
+	age: Int!
+	address: [Address!]!
+	school: School!
+}
+
+type Teacher implements Character {
+	classes: [String!]!
+	kind: Status!
+	name: String!
+	age: Int!
+	address: [Address!]!
+	school: School!
+}
+
+enum Status {
+	PROFESSOR
+	DOCTOR
+	EXTERN
+}
+
+type Address {
+	street: String!
+	number: Int!
+	zipcode: Int!
+}
+
+type School {
+	name: String!
+	address: Address!
+}
+
+input UserInput {
+	class: String!
+	name: String!
+	age: Int!
+	address: AddressInput!
+}
+
+input SchoolInput {
+	name: String!
+	address: AddressInput!
+}
+
+input AddressInput {
+	street: String!
+	number: Int!
+	zipcode: Int!
+}
